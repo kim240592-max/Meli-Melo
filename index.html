@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kimberly Mejías | Enseñanza del Francés</title>
+
+<style>
+
+:root {
+    --azul: #176B9A;
+    --azul-oscuro: #124B70;
+    --verde: #42A982;
+    --verde-claro: #EAF5F0;
+    --fondo: #F4FAFC;
+    --blanco: #FFFFFF;
+    --texto: #29465B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+/* NAVEGACIÓN */
+
+header {
+    background: white;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--azul);
+}
+
+.logo span {
+    color: var(--verde);
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--verde);
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 520px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(120deg, #DDF1F7, #E4F6ED);
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    color: var(--azul-oscuro);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    font-size: 150px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--azul);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--verde);
+    transform: translateY(-3px);
+}
+
+/* SECCIONES */
+
+section {
+    padding: 75px 8%;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--azul);
+    font-size: 34px;
+}
+
+.section-title p {
+    color: #648092;
+}
+
+/* HISTORIA */
+
+.historia {
+    background: white;
+    text-align: center;
+}
+
+.historia-content {
+    max-width: 850px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.historia-content p {
+    margin-bottom: 18px;
+}
+
+.destacado {
+    background: var(--verde-claro);
+    padding: 25px;
+    border-radius: 18px;
+    margin-top: 25px;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+}
+
+/* TARJETAS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 18px #164b7010;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card .icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: var(--azul);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.card a {
+    color: var(--verde);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* GALERÍA */
+
+.galeria {
+    background: var(--verde-claro);
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.galeria-item {
+    min-height: 190px;
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 60px;
+    overflow: hidden;
+}
+
+.galeria-item p {
+    font-size: 15px;
+    color: var(--azul);
+    font-weight: bold;
+}
+
+/* EVENTOS */
+
+.eventos {
+    background: white;
+}
+
+/* CONTACTO */
+
+.contacto {
+    background: linear-gradient(120deg, #DDF1F7, #E4F6ED);
+    text-align: center;
+}
+
+.contacto p {
+    margin-bottom: 20px;
+}
+
+footer {
+    background: var(--azul-oscuro);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+footer span {
+    color: #8FE0B9;
+}
+
+/* MÓVILES */
+
+@media(max-width: 750px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 6%;
+    }
+
+    .hero-image {
+        font-size: 100px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENÚ -->
+
+<header>
+
+<div class="logo">
+    Kimberly <span>Mejías</span> 🌿
+</div>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Mi historia</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#galeria">Galería</a>
+    <a href="#productos">Productos</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+</header>
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-text">
+
+<h1>
+¡Bonjour! Bienvenidos a mi
+<span>espacio educativo</span>
+</h1>
+
+<p>
+Soy Kimberly Mejías, docente de enseñanza del francés
+en educación primaria en Costa Rica.
+</p>
+
+<p>
+Creo experiencias de aprendizaje dinámicas,
+creativas y lúdicas para que aprender francés
+sea una aventura.
+</p>
+
+<a href="#historia" class="btn">Conóceme</a>
+
+<a href="#recursos" class="btn">Explorar recursos</a>
+
+</div>
+
+<div class="hero-image">
+    📚🇫🇷🌎
+</div>
+
+</section>
+
+<!-- MI HISTORIA -->
+
+<section class="historia" id="historia">
+
+<div class="section-title">
+<h2>🌷 Mi historia</h2>
+<p>Una vocación que inspira y transforma.</p>
+</div>
+
+<div class="historia-content">
+
+<p>
+¡Hola! Soy Kimberly Mejías, docente de enseñanza del
+francés en educación primaria en Costa Rica.
+</p>
+
+<p>
+Cuento con 13 años de experiencia docente,
+durante los cuales he descubierto que enseñar
+es mucho más que transmitir conocimientos:
+es motivar, descubrir talentos y crear oportunidades
+para aprender.
+</p>
+
+<p>
+Me apasiona diseñar clases lúdicas, crear juegos
+didácticos y desarrollar recursos educativos que
+permitan dinamizar los contenidos pedagógicos
+y despertar el interés de mis estudiantes.
+</p>
+
+<p>
+Creo firmemente que aprender un idioma puede ser
+una experiencia divertida, significativa y llena
+de creatividad.
+</p>
+
+<div class="destacado">
+"Aprender francés es abrir una ventana
+a nuevas culturas, experiencias y oportunidades."
+</div>
+
+</div>
+
+</section>
+
+<!-- RECURSOS -->
+
+<section id="recursos">
+
+<div class="section-title">
+<h2>📚 Recursos pedagógicos</h2>
+<p>Materiales para aprender francés jugando.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎲</div>
+<h3>Juegos didácticos</h3>
+<p>Bingos, juegos de memoria, dominós y actividades
+para aprender vocabulario francés.</p>
+<a href="#contacto">Próximamente</a>
+</div>
+
+<div class="card">
+<div class="icon">📝</div>
+<h3>Fichas de trabajo</h3>
+<p>Actividades imprimibles para desarrollar
+las competencias comunicativas.</p>
+<a href="#contacto">Próximamente</a>
+</div>
+
+<div class="card">
+<div class="icon">🎧</div>
+<h3>Comprensión oral</h3>
+<p>Audios, videos y actividades para fortalecer
+la comprensión del francés.</p>
+<a href="#contacto">Próximamente</a>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Actividades creativas</h3>
+<p>Manualidades, proyectos y propuestas
+artísticas para el aula.</p>
+<a href="#contacto">Próximamente</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERÍA -->
+
+<section class="galeria" id="galeria">
+
+<div class="section-title">
+<h2>📸 Galería educativa</h2>
+<p>Momentos, experiencias y aprendizajes.</p>
+</div>
+
+<div class="galeria-grid">
+
+<div class="galeria-item">
+🎭
+<p>Proyectos escolares</p>
+</div>
+
+<div class="galeria-item">
+🎲
+<p>Aprendemos jugando</p>
+</div>
+
+<div class="galeria-item">
+🇫🇷
+<p>Francofonía</p>
+</div>
+
+<div class="galeria-item">
+🎨
+<p>Creaciones de estudiantes</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTOS -->
+
+<section id="productos">
+
+<div class="section-title">
+<h2>🛍️ Productos educativos</h2>
+<p>Creaciones y materiales para docentes de francés.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Bingos en francés</h3>
+<p>Recursos para practicar vocabulario
+de manera divertida.</p>
+<a href="#contacto">Consultar</a>
+</div>
+
+<div class="card">
+<div class="icon">📖</div>
+<h3>Fichas pedagógicas</h3>
+<p>Materiales educativos organizados
+por temas y niveles.</p>
+<a href="#contacto">Consultar</a>
+</div>
+
+<div class="card">
+<div class="icon">🎲</div>
+<h3>Juegos imprimibles</h3>
+<p>Actividades lúdicas para dinamizar
+las clases de francés.</p>
+<a href="#contacto">Consultar</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- EVENTOS -->
+
+<section class="eventos" id="eventos">
+
+<div class="section-title">
+<h2>🎉 Eventos y proyectos</h2>
+<p>Celebrando el aprendizaje y la cultura francófona.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🇫🇷</div>
+<h3>Journée de la Francophonie</h3>
+<p>Celebración de la lengua francesa,
+sus culturas y tradiciones.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Proyectos educativos</h3>
+<p>Experiencias para fomentar la creatividad,
+la convivencia y el aprendizaje.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌍</div>
+<h3>Actividades culturales</h3>
+<p>Descubriendo el mundo francófono
+a través de experiencias educativas.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+
+<div class="section-title">
+<h2>💌 ¡Conectemos!</h2>
+<p>Compartamos ideas, recursos y experiencias educativas.</p>
+</div>
+
+<p>
+¿Te interesa algún recurso o deseas compartir
+una experiencia pedagógica?
+</p>
+
+<a class="btn" href="mailto:TU_CORREO@ejemplo.com">
+Escríbeme
+</a>
+
+</section>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+<p>
+© 2026 <span>Kimberly Mejías</span> |
+Enseñanza del Francés en Primaria 🇫🇷
+</p>
+
+<p>Creando experiencias para aprender jugando. 🌿</p>
+
+</footer>
+
+</body>
+</html>
